@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Generate live data from the Best Buy API in JSON format using an API key that was posted on the internet
-    fetch("https://api.bestbuy.com/v1/products(condition=new&regularPrice>100.00&inStoreAvailability=true&(categoryPath.id=pcmcat209400050001))?apiKey=qhqws47nyvgze2mq3qx4jadt&pageSize=100&format=json")
+	// Aug 2024 - Disabled the API key to demonstrate cached data after some products were removed from the live database.
+	//fetch("https://api.bestbuy.com/v1/products(condition=new&regularPrice>100.00&inStoreAvailability=true&(categoryPath.id=pcmcat209400050001))?apiKey=qhqws47nyvgze2mq3qx4jadt&pageSize=100&format=json")
+	fetch("https://api.bestbuy.com/v1/products(condition=new&regularPrice>100.00&inStoreAvailability=true&(categoryPath.id=pcmcat209400050001))?apiKey=disabledToDemonstrateCachedData&pageSize=100&format=json")
         .then((response) => {
             if (response.ok) {
                 return response.json();
